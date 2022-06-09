@@ -1,0 +1,9 @@
+.base {
+    height: 100vh;
+    width: 100vw;
+    padding: 5%;
+}
+
+.CalendarHeader {
+    width: 50%;
+}

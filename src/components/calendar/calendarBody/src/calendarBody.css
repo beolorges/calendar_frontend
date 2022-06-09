@@ -1,0 +1,39 @@
+.calendarBody {
+    width: 100%;
+    height: 100%;
+    color: var(--defaultTextColor);
+    overflow-y: scroll;
+    background-color: white;
+
+}
+
+.calendarBody>.calendarBodyContent {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% 95%;
+    height: 40px;
+    font-size: 10pt;
+    align-items: center;
+
+}
+
+.hoursDivisions {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-flow: repeat(7, 1fr);
+}
+
+.horizontalLine {
+    width: 100%;
+    background-color: var(--defaultLineColor);
+    height: 1px;
+
+}
+
+.verticalLine {
+    height: 100%;
+    background-color: var(--defaultLineColor);
+    width: 1px;
+    border: 10px;
+}

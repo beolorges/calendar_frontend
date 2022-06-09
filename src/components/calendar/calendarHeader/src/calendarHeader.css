@@ -1,0 +1,19 @@
+.baseCalendarHeader {
+    width: 100%;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 5% 95%;
+}
+
+.calendarHeaderTitle {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    color: var(--defaultTextColor)
+}
+
+.individualHeaderTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
