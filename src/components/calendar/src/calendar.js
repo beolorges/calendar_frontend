@@ -5,7 +5,7 @@ import CalendarHeader from "../calendarHeader/src/calendarHeader";
 
 function Calendar() {
     return (
-        <div className="base">
+        <div className="baseCalendar">
             <CalendarHeader />
             <CalendarBody />
         </div>

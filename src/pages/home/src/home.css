@@ -1,0 +1,31 @@
+.calendarHome {
+    width: 72%;
+    height: 100%;
+}
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.headerHome {
+    height: 10%;
+    width: 100%;
+    background-color: blue;
+}
+
+.homeContent {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    gap: 15px
+}
+
+.sideBar {
+    width: 28%;
+    height: 100%;
+
+    display: flex;
+}

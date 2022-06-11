@@ -2,12 +2,12 @@ import React from "react";
 import "./calendarBody.css"
 import hoursArray from "../../../../utils/hoursArray";
 
-const days = ["segunda", "terça", "quarta", "quinta", "sexta", "sabado", "domingo"];
+const days = ["dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sab."];
 
 function CalendarBody() {
     return (
         <div className="calendarBody">
-            {hoursArray.map(e => (
+            {/* {hoursArray.map(e => (
                 <div className="calendarBodyContent">
                     <div />
                     <div className="hoursDivisions">
@@ -18,9 +18,15 @@ function CalendarBody() {
                     {e}
                     <div className="horizontalLine" />
                 </div>
-            ))}
+            ))} */}
 
+            {
+                days.map(e => (
+                    <div className="dayGrid">
 
+                    </div>
+                ))
+            }
         </div >
     )
 }

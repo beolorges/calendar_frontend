@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,6 +13,29 @@ body,
 div#root {
     height: 100%;
     width: 100%;
+    --defaultTitleTextColor: rgb(85, 85, 85);
     --defaultTextColor: rgb(136, 136, 136);
     --defaultLineColor: rgb(189, 189, 189);
+
+    --darkerBackgroundColor: rgb(59, 59, 59);
+    --darkerBackgroundColor2: rgb(180, 180, 180);
+    --darkerBackgroundColor3: rgb(30, 30, 30);
+    --lighterBackgroundColor: rgb(210, 210, 210);
+}
+
+
+::-webkit-scrollbar {
+    width: 20px;
+    box-sizing: content-box;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
 }

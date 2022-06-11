@@ -1,10 +1,8 @@
-import Calendar from "./components/calendar/src/calendar";
+import Routes from "./routes";
 
 function App() {
   return (
-    <div className="App">
-      <Calendar />
-    </div>
+    <Routes />
   );
 }
 
