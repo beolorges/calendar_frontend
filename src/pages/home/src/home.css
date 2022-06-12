@@ -1,6 +1,9 @@
 .calendarHome {
-    width: 72%;
+    position: absolute;
+    left: calc(28% + 15px);
+    width: calc(72% - 15px);
     height: 100%;
+    padding-right: 10px;
 }
 
 .home {

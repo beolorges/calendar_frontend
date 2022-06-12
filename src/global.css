@@ -21,12 +21,15 @@ div#root {
     --darkerBackgroundColor2: rgb(180, 180, 180);
     --darkerBackgroundColor3: rgb(30, 30, 30);
     --lighterBackgroundColor: rgb(210, 210, 210);
+
+    --hourSize: 50px;
 }
 
 
 ::-webkit-scrollbar {
     width: 20px;
     box-sizing: content-box;
+    padding: 0;
 }
 
 ::-webkit-scrollbar-track {

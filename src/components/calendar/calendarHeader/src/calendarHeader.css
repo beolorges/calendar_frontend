@@ -1,5 +1,5 @@
 .baseCalendarHeader {
-    width: calc(100% - 20px);
+    width: calc(100% - 12px);
     height: 25%;
     display: grid;
     grid-template-columns: 5% 95%;
@@ -25,6 +25,12 @@
     width: 100%;
     grid-template-columns: repeat(7, 1fr);
     color: var(--defaultTextColor)
+}
+
+.individualHeaderTitle:first-of-type,
+.individualHeaderTitle:last-of-type {
+    color: red;
+    opacity: 60%;
 }
 
 .individualHeaderTitle {

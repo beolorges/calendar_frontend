@@ -1,0 +1,21 @@
+.eventContent {
+    position: absolute;
+    background-color: green;
+    z-index: 10;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    font-size: 5pt;
+    padding: 5px;
+}
+
+.eventContent h2 {
+    font-weight: 500;
+}
+
+.eventContent h1 {
+    font-weight: 600;
+}
+
+.eventContent:hover {
+    cursor: pointer;
+}
