@@ -7,7 +7,7 @@
 
 .calendarHeaderTitleText {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -17,14 +17,32 @@
     grid-template-rows: repeat(2, 1fr);
     place-items: center;
     height: 100%;
-    color: var(--defaultTitleTextColor)
+    color: var(--defaultTitleTextColor);
+    width: calc(100% + 33.04px);
+    margin-left: -15.02px;
 }
 
 .monthsHeader {
     display: grid;
-    width: 100%;
+    width: calc(100%);
     grid-template-columns: repeat(7, 1fr);
-    color: var(--defaultTextColor)
+    color: var(--defaultTextColor);
+
+}
+
+/* .navigationMonths svg:first-of-type {
+    margin-right: -15.02px;
+}
+
+.navigationMonths svg:last-of-type {
+    margin-right: 15.02px;
+} */
+
+.navigationMonths {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .individualHeaderTitle:first-of-type,

@@ -1,6 +1,13 @@
 import React from "react";
 import { PersonCircle, Search, BoxArrowLeft } from "react-bootstrap-icons"
-import "./sideBarNavigator.css"
+import "./sideBarNavigator.css";
+import { logout } from "../../../services/auth"
+
+function handleLogout() {
+    logout();
+    alert("Logout realizado com sucesso!");
+    window.location.href = "/login";
+}
 
 function sideBarNavigator({ height, width }) {
     const customSideBarStyle = {
@@ -11,12 +18,11 @@ function sideBarNavigator({ height, width }) {
     return (
         <div className="sideBarNavigator" style={customSideBarStyle}>
             <div className="upperIcons">
-                <PersonCircle size={'20px'} max-height={'20px'} color={'white'} />
-                <Search size={'20px'} max-height={'20px'} color={'white'} />
+                <PersonCircle className="sideBarNavigatorButtons" size={'20px'} max-height={'20px'} color={'white'} />
+                <Search className="sideBarNavigatorButtons" size={'20px'} max-height={'20px'} color={'white'} />
             </div>
             <div className="bottomIcons">
-                <BoxArrowLeft size={'20px'} max-height={'20px'} color={'white'} />
-
+                <BoxArrowLeft size={'20px'} max-height={'20px'} color={'white'} onClick={handleLogout} className="sideBarNavigatorButtons" />
             </div>
         </div >
     )

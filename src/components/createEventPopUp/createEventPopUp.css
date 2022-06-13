@@ -1,0 +1,122 @@
+.EventPopUpBase {
+    position: absolute;
+    top: calc(50% - 40vh);
+    left: calc(50% - 20vw);
+    width: 40vw;
+    height: 80vh;
+    background-color: white;
+    z-index: 100;
+    transition: display 2s;
+    border-radius: 25px;
+    padding: 3%;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+}
+
+.createEventButton {
+    padding: 4%;
+    width: 80%;
+    color: white;
+    background-color: var(--darkerBackgroundColor);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+}
+
+.createEventButton:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid var(--darkerBackgroundColor);
+    opacity: 0.8;
+}
+
+.eventPopUpHeader {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.eventTitleForm {
+    font-size: 15pt;
+}
+
+.eventDescriptionForm {
+    height: 10vh;
+    flex-wrap: wrap;
+}
+
+
+.exitPopUp:hover {
+    cursor: pointer;
+}
+
+.eventPopUpBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%;
+
+}
+
+.eventPopUpBodyForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.eventPopUpBodyForm input,
+.eventPopUpBodyForm textarea,
+.eventPopUpBodyForm select {
+    width: 100%;
+    border: 1px solid var(--darkerBackgroundColor);
+    border-radius: 10px;
+    padding: 2% 10px;
+}
+
+.eventPopUpBodyForm textarea {
+    resize: none;
+}
+
+.eventPopUpBodyFormSchedule {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.eventPopUpBodyFormScheduleTime {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.eventPopUpBodyFormScheduleTime select {
+    text-align: center;
+    padding: 2px;
+}
+
+
+.eventPopUpTime {
+    width: 100%;
+    display: flex;
+    gap: 2px;
+}
+
+.eventPopUpSetDay p {
+    font-size: 12pt;
+}
+
+.eventPopUpSetDay {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 13% calc(50% - 5px) calc(37% - 5px);
+    gap: 5px;
+}

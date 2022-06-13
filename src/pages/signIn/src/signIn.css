@@ -1,0 +1,79 @@
+.signInBase {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: var(--darkerBackgroundColor2);
+
+}
+
+.signInContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    height: 80%;
+    width: 60%;
+    border-radius: 20px;
+    border: 1px solid var(--darkerBackgroundColor);
+    background-color: var(--darkerBackgroundColor2);
+}
+
+.signInInputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 60%;
+}
+
+.signInIndividualInputs {
+    padding: 8px 3%;
+    border-radius: 5px;
+    border: 1px solid var(--darkerBackgroundColor);
+    background-color: rgb(255, 255, 255, 0.4);
+}
+
+.signInButtonGroup {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.signInButtonGroup button {
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid var(--darkerBackgroundColor);
+    background-color: var(--darkerBackgroundColor);
+    color: var(--defaultTextColor);
+    width: 20%;
+    max-width: 150px;
+    min-width: 80px;
+}
+
+.signInButtonGroup button:hover {
+    cursor: pointer;
+}
+
+.signInContent a {
+    color: var(--darkerBackgroundColor);
+}
+
+.signInContent h1 {
+    color: var(--darkerBackgroundColor);
+}
+
+.signInCheckPasswordGroup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2px;
+    margin-top: 8px;
+}
+
+.signInCheckPasswordGroup li {
+    font-size: 8pt;
+}
