@@ -1,0 +1,52 @@
+.eventDetailsBase {
+    position: fixed;
+    top: calc(50% - 40vh);
+    left: calc(50% - 20vw);
+    width: 40vw;
+    height: 80vh;
+    background-color: white;
+    z-index: 90;
+    transition: display 2s;
+    border-radius: 25px;
+    padding: 3%;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+}
+
+.exitDetails:hover {
+    cursor: pointer;
+}
+
+.eventDetailsHeader {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.eventDetailsSetDay {
+    display: flex;
+    gap: 5px;
+}
+
+.eventDetailsBody {
+    height: 80%;
+    display: grid;
+    grid-template-rows: 25% 55% 20%;
+    align-items: center;
+}
+
+.eventBodyDescription {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.eventDetailsButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.eventDetailsBody button {
+    height: 50%;
+    width: 60%;
+
+}

@@ -1,28 +1,63 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./event.css";
+import EventDetails from "../../../eventDetails/eventDetails";
+import moment from "moment";
 
-function event({ title, startTime, endTime, numberOfDays, dayNumber }) {
-    const startHour = startTime.split(":")[0];
-    const startMinute = startTime.split(":")[1].split(" ")[0];
-    const endHour = endTime.split(":")[0];
-    const endMinute = endTime.split(":")[1].split(" ")[0];
-    const duration = (endHour - startHour) * 60 + (endMinute - startMinute);
+function Event({ name, startTime, endTime, eventId, numberOfDays, eventType, inputDay }) {
 
-    const eventStyle = {
+    if (name === 'Teste Dias') {
+        console.log({ startTime, endTime })
+    }
 
-        top: `calc(${startHour} * var(--hourSize) + ${startMinute} * var(--hourSize) / 60 - var(--hourSize) / 2)`,
+    const startHour = moment(startTime).format('HH');
+    const startMinute = moment(startTime).format('mm');;
+    const endHour = moment(endTime).format('HH');
+    const endMinute = moment(endTime).format('mm');
+    const duration = moment(endTime).diff(moment(startTime), 'minutes');
+    const [modal, setModal] = useState("none");
+    const [referenceDay, setReferenceDay] = useState(moment('16061900', 'DDMMYYYY').format('DD MM YYYY'));
+    const [distanceToSunday, setDistanceToSunday] = useState();
+
+    useEffect(() => {
+        let day = referenceDay;
+
+        while (moment(day, 'DD MM YYYY').format('dddd') !== 'Sunday') {
+            day = moment(day, 'DD MM YYYY').subtract(1, 'days').format('DD MM YYYY');
+        }
+
+        setReferenceDay(day);
+        setDistanceToSunday(moment(startTime).diff(moment(referenceDay, 'DD MM YYYY'), 'days'));
+    }, [referenceDay, startTime]);
+
+    useEffect(() => {
+        setReferenceDay(moment(inputDay, 'DDMMYYYY').format('DD MM YYYY'))
+    }, [inputDay]);
+
+    let eventStyle = {
+        top: `calc(${startHour} * var(--hourSize) + ${startMinute} * var(--hourSize) / 60`,
         height: `calc(var(--hourSize) / 60 * ${duration})`,
         width: `calc((95% / ${numberOfDays}) - 5px)`,
-        left: `calc((95% / ${numberOfDays} * ${dayNumber}) + 5%)`,
+        left: `calc((95% / ${numberOfDays} * ${distanceToSunday}) + 5%)`,
+        border: '2px solid green',
+    }
 
+    eventType === 3 ? eventStyle = { ...eventStyle, backgroundColor: 'white', color: 'green' } : eventStyle = { ...eventStyle, backgroundColor: 'green', color: 'white' };
+
+
+    function handleModalSelection() {
+        modal === 'none' ? setModal('inline') : setModal('none');
     }
 
     return (
-        <div className='eventContent' style={eventStyle}>
-            <h1>{title}</h1>
-            <h2>{startTime} - {endTime}</h2>
+        <div>
+            <div className='eventContent' style={eventStyle} onClick={() => { handleModalSelection(); }}>
+                <h1>{name}</h1>
+                <h2>{startHour}:{startMinute} - {endHour}:{endMinute}</h2>
+            </div>
+            <EventDetails display={modal} eventId={eventId} eventType={eventType} />
+
         </div>
     )
 }
 
-export default event
+export default Event

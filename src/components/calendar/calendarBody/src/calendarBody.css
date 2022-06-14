@@ -19,7 +19,7 @@
 .hoursGrid {
     min-height: var(--hourSize);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     text-transform: uppercase;
     font-size: 10pt;
@@ -55,7 +55,7 @@
 }
 
 .hourButtonGrid button:first-child {
-    border-bottom: 1px solid var(--defaultLineColor);
+    border-top: 1px solid var(--defaultLineColor);
 }
 
 .eventsDiv {

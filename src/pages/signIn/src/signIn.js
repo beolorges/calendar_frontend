@@ -53,7 +53,6 @@ function SignIn() {
     const [upperCase, setUpperCase] = useState('red');
 
     useEffect(() => {
-        console.log(password)
         isPasswordMin8Char(password) ?
             setEightChar('green') : setEightChar('red');
 

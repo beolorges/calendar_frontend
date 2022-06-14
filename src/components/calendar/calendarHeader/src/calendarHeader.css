@@ -30,13 +30,10 @@
 
 }
 
-/* .navigationMonths svg:first-of-type {
-    margin-right: -15.02px;
+.navigationMonths svg:hover {
+    cursor: pointer;
 }
 
-.navigationMonths svg:last-of-type {
-    margin-right: 15.02px;
-} */
 
 .navigationMonths {
     width: 100%;

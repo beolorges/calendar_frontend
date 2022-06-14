@@ -1,11 +1,10 @@
 .eventContent {
     position: absolute;
-    background-color: green;
     z-index: 10;
     border-radius: 0 10px 10px 0;
-    color: white;
     font-size: 5pt;
     padding: 5px;
+    min-height: 50px;
 }
 
 .eventContent h2 {
