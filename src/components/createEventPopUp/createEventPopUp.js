@@ -47,7 +47,7 @@ const isThisTimeFree = async (startTime, endTime) => {
 }
 
 function handleCreateEvent({ name, description, startDate, endDate, location, email }) {
-    const emailArray = email?.split(';');
+    const emailArray = email?.split('; ');
     const startDateForInput = moment(`${startDate.startDay}, ${startDate.startHour}:${startDate.startMinute}`, 'DD/MM/YYYY, HH:mm').format();
     const endDateForInput = moment(`${endDate.endDay}, ${endDate.endHour}:${endDate.endMinute}`, 'DD/MM/YYYY, hh:mm').format();
 
@@ -160,7 +160,7 @@ function CreateEventPopUp({ display }) {
                         </div>
                     </div>
                     <input type='text' placeholder='Local do evento' onChange={(e) => { setLocation(e.target.value) }} />
-                    <input type='text' placeholder='Email de convidados separados por ";"' onChange={(e) => { setEmail(e.target.value) }} />
+                    <input type='text' placeholder='Email de convidados separados por "; "' onChange={(e) => { setEmail(e.target.value) }} />
                 </div>
                 <button className="createEventButton" onClick={() => { handleCreateEvent({ name, description, startDate: { startDay, startHour, startMinute }, endDate: { endDay, endHour, endMinute }, location, email }) }}>Criar evento</button>
             </div>
