@@ -1,5 +1,5 @@
 .EventPopUpBase {
-    position: absolute;
+    position: fixed;
     top: calc(50% - 40vh);
     left: calc(50% - 20vw);
     width: 40vw;
@@ -10,14 +10,15 @@
     border-radius: 25px;
     padding: 3%;
     box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+    color: var(--primaryTextColor);
 }
 
 .createEventButton {
     padding: 4%;
     width: 80%;
     color: white;
-    background-color: var(--darkerBackgroundColor);
-    border: none;
+    background-color: var(--detailsColor);
+    border: 1px solid var(--detailsColor);
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 25px;
@@ -31,7 +32,6 @@
 .createEventButton:hover {
     color: black;
     background-color: white;
-    border: 1px solid var(--darkerBackgroundColor);
     opacity: 0.8;
 }
 
@@ -77,7 +77,7 @@
 .eventPopUpBodyForm textarea,
 .eventPopUpBodyForm select {
     width: 100%;
-    border: 1px solid var(--darkerBackgroundColor);
+    border: 1px solid var(--primaryColor);
     border-radius: 10px;
     padding: 2% 10px;
 }
@@ -112,6 +112,7 @@
 
 .eventPopUpSetDay p {
     font-size: 12pt;
+    font-weight: bold;
 }
 
 .eventPopUpSetDay {

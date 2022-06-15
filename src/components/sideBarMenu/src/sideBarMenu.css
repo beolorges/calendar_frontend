@@ -1,11 +1,11 @@
 .sideBarMenu {
     padding: 25px;
     width: 100%;
-    background-color: var(--darkerBackgroundColor2);
+    background-color: var(--secondaryColor);
     display: flex;
     flex-direction: column;
     gap: 25px;
-    color: var(--darkerBackgroundColor);
+    color: var(--primaryTextColor);
 }
 
 .elementsSideBarMenu {
@@ -22,7 +22,7 @@
     padding: 4%;
     width: 80%;
     color: white;
-    background-color: var(--darkerBackgroundColor);
+    background-color: var(--detailsColor);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -35,9 +35,8 @@
 }
 
 .createEvent:hover {
-    color: black;
+    color: var(--primaryTextColor);
     background-color: white;
-    opacity: 0.8;
 }
 
 .sideBarMenu p {
@@ -49,7 +48,7 @@
 .react-calendar {
     width: 100%;
     max-width: 100%;
-    background: var(--darkerBackgroundColor2);
+    background: var(--secondaryColor);
     border: 0;
     line-height: 1.125em;
 
@@ -83,7 +82,7 @@
     font-size: 0.75em;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--darkerBackgroundColor);
+    color: var(--primaryColor);
 }
 
 .react-calendar__navigation button {
@@ -130,12 +129,12 @@ abbr[title] {
 }
 
 .react-calendar__month-view__days__day {
-    color: var(--darkerBackgroundColor);
+    color: var(--primaryColor);
     font-weight: bold;
 }
 
 .react-calendar__month-view__days__day--weekend {
-    color: rgb(180, 26, 26);
+    color: var(--secondaryTextColor);
     font-weight: bold;
 }
 
@@ -168,7 +167,7 @@ abbr[title] {
 }
 
 .react-calendar__tile--now {
-    background: var(--darkerBackgroundColor);
+    background: var(--primaryColor);
     color: #ffff;
 }
 

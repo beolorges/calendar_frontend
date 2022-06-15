@@ -31,7 +31,7 @@ function SignIn() {
 
                 </div>
                 <div className="signInButtonGroup">
-                    <button>Limpar</button>
+                    {/* <button>Limpar</button> */}
                     <button onClick={
                         () => {
                             handleLogin(email, password);

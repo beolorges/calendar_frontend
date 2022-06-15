@@ -17,7 +17,7 @@
     grid-template-rows: repeat(2, 1fr);
     place-items: center;
     height: 100%;
-    color: var(--defaultTitleTextColor);
+    color: var(--primaryTextColor);
     width: calc(100% + 33.04px);
     margin-left: -15.02px;
 }
@@ -44,8 +44,7 @@
 
 .individualHeaderTitle:first-of-type,
 .individualHeaderTitle:last-of-type {
-    color: red;
-    opacity: 60%;
+    color: var(--secondaryTextColor);
 }
 
 .individualHeaderTitle {

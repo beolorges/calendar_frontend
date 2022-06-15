@@ -38,10 +38,10 @@ function Event({ name, startTime, endTime, eventId, numberOfDays, eventType, inp
         height: `calc(var(--hourSize) / 60 * ${duration})`,
         width: `calc((95% / ${numberOfDays}) - 5px)`,
         left: `calc((95% / ${numberOfDays} * ${distanceToSunday}) + 5%)`,
-        border: '2px solid green',
+        border: '2px solid var(--primaryColor)',
     }
 
-    eventType === 3 ? eventStyle = { ...eventStyle, backgroundColor: 'white', color: 'green' } : eventStyle = { ...eventStyle, backgroundColor: 'green', color: 'white' };
+    eventType === 3 ? eventStyle = { ...eventStyle, backgroundColor: 'white', color: 'var(--primaryColor)' } : eventStyle = { ...eventStyle, backgroundColor: 'var(--primaryColor)', color: 'white' };
 
 
     function handleModalSelection() {

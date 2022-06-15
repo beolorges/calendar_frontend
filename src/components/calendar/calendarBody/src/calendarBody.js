@@ -4,6 +4,7 @@ import hoursArray from "../../../../utils/hoursArray";
 import Event from "../../event/src/event";
 import api from "../../../../services/api";
 import moment from "moment";
+import CreateEventPopUp from "../../../createEventPopUp/createEventPopUp";
 
 const days = ["dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sab."];
 const user = JSON.parse(localStorage.getItem('user'));
@@ -12,6 +13,11 @@ function CalendarBody({ inputDay }) {
     const [eventCreatedByUser, setEventCreatedByUser] = useState([]);
     const [acceptedByUser, setAcceptedByUser] = useState([]);
     const [notAcceptedByUser, setNotAcceptedByUser] = useState([]);
+    const [modal, setModal] = useState('none');
+
+    function handleModalSelection() {
+        modal === 'none' ? setModal('inline') : setModal('none');
+    }
 
     useEffect(() => {
         api.get(`/event/${user.user_id}`).then((response) => {
@@ -39,8 +45,8 @@ function CalendarBody({ inputDay }) {
                             <div className="dayGrid">
                                 {hoursArray.map(hour => (
                                     <div className="hourButtonGrid">
-                                        <button className="supDayGridButton" onClick={() => console.log({ 'day': day, 'hour': hour, 'minute': 30 })} />
-                                        <button className="infDayGridButton" onClick={() => console.log({ 'day': day, 'hour': hour, 'minute': 0 })} />
+                                        <button className="supDayGridButton" onClick={() => { handleModalSelection() }} />
+                                        <button className="infDayGridButton" onClick={() => { handleModalSelection() }} />
                                     </ div>
                                 ))}
                             </div>
@@ -117,6 +123,7 @@ function CalendarBody({ inputDay }) {
                     )}
                 </div>
             </div >
+            <CreateEventPopUp display={modal} />
         </>
     )
 }

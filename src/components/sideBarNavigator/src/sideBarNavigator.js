@@ -18,11 +18,11 @@ function sideBarNavigator({ height, width }) {
     return (
         <div className="sideBarNavigator" style={customSideBarStyle}>
             <div className="upperIcons">
-                <PersonCircle className="sideBarNavigatorButtons" size={'20px'} max-height={'20px'} color={'white'} />
-                <Search className="sideBarNavigatorButtons" size={'20px'} max-height={'20px'} color={'white'} />
+                <PersonCircle className="sideBarNavigatorButtons" size={'20px'} max-height={'20px'} color={'var(--secondaryColor)'} />
+                <Search className="sideBarNavigatorButtons" size={'20px'} max-height={'20px'} color={'var(--secondaryColor)'} />
             </div>
             <div className="bottomIcons">
-                <BoxArrowLeft size={'20px'} max-height={'20px'} color={'white'} onClick={handleLogout} className="sideBarNavigatorButtons" />
+                <BoxArrowLeft size={'20px'} max-height={'20px'} color={'var(--secondaryColor)'} onClick={handleLogout} className="sideBarNavigatorButtons" />
             </div>
         </div >
     )

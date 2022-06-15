@@ -14,13 +14,13 @@ body,
 div#root {
     height: 100%;
     width: 100%;
-    --defaultTitleTextColor: rgb(85, 85, 85);
-    --defaultTextColor: rgb(136, 136, 136);
+    --primaryTextColor: #315A6A;
+    --secondaryTextColor: #00A896;
     --defaultLineColor: rgb(189, 189, 189);
 
-    --darkerBackgroundColor: rgb(59, 59, 59);
-    --darkerBackgroundColor2: rgb(180, 180, 180);
-    --darkerBackgroundColor3: rgb(30, 30, 30);
+    --primaryColor: #05668D;
+    --secondaryColor: #F0F0F0;
+    --detailsColor: #028090;
     --lighterBackgroundColor: rgb(210, 210, 210);
 
     --hourSize: 50px;
