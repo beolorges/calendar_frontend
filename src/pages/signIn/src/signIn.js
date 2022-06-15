@@ -78,9 +78,9 @@ function SignIn() {
                     <div className="signInCheckPasswordGroup">
                         <ul>
                             <li style={{ 'color': `${eightChar}` }}> Sua senha deve possuir 8 caracteres </li>
-                            <li style={{ 'color': `${specialChar}` }}> Sua senha deve possuir caracter especial </li>
+                            <li style={{ 'color': `${specialChar}` }}> Sua senha deve possuir carácter especial </li>
                             <li style={{ 'color': `${number}` }}> Sua senha deve possuir ao menos 1 número</li>
-                            <li style={{ 'color': `${upperCase}` }}> Sua senha deve possuir caracter maiúsculo </li>
+                            <li style={{ 'color': `${upperCase}` }}> Sua senha deve possuir carácter maiúsculo </li>
                         </ul>
                     </div>
                 </div>

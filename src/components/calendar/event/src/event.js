@@ -39,7 +39,10 @@ function Event({ name, startTime, endTime, eventId, numberOfDays, eventType, inp
         width: `calc((95% / ${numberOfDays}) - 5px)`,
         left: `calc((95% / ${numberOfDays} * ${distanceToSunday}) + 5%)`,
         border: '1px solid var(--primaryColor)',
+        display: 'inline'
     }
+
+    distanceToSunday < 0 || distanceToSunday >= 7 ? eventStyle.display = 'none' : eventStyle.display = 'inline';
 
     eventType === 3 ? eventStyle = { ...eventStyle, backgroundColor: 'white', color: 'var(--primaryColor)' } : eventStyle = { ...eventStyle, backgroundColor: 'var(--primaryColor)', color: 'white' };
 
@@ -47,6 +50,7 @@ function Event({ name, startTime, endTime, eventId, numberOfDays, eventType, inp
     function handleModalSelection() {
         modal === 'none' ? setModal('inline') : setModal('none');
     }
+
 
     return (
         <div>
