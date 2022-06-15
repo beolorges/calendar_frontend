@@ -17,28 +17,32 @@ const isValidTime = (startTime, endTime) => {
     return true
 }
 
-const isThisTimeFree = (startTime, endTime) => {
-    api.get(`/event/${JSON.parse(localStorage.user).user_id}`).then((res) => {
-        res.data.acceptedByUser.forEach((event) => {
-            if (moment(startTime).isBetween(moment(event.startTime), moment(event.endTime)) || moment(endTime).isBetween(moment(event.startTime), moment(event.endTime)) || moment(event.startTime).isBetween(moment(startTime), moment(endTime)) || moment(event.endTime).isBetween(moment(startTime), moment(endTime))) {
-                return false;
+const isThisTimeFree = async (startTime, endTime) => {
+    return api.get(`/event/${JSON.parse(localStorage.user).user_id}`).then((res) => {
+        let auxVar = true;
+        res.data.acceptedByUser.forEach(element => {
+            if (moment(startTime).isBetween(element.startTime, element.endTime) || moment(endTime).isBetween(element.startTime, element.endTime) || moment(element.startTime).isBetween(startTime, endTime) || moment(element.endTime).isBetween(startTime, endTime) || (moment(startTime).isSame(element.startTime) && moment(endTime).isSame(element.endTime))) {
+                auxVar = false;
+                return;
             }
         });
 
-        res.data.createdByUser.forEach((event) => {
-            console.log(startTime, endTime, event.startTime, event.endTime);
-            if (!moment(startTime).isBetween(moment(event.startTime), moment(event.endTime))) {
-                return false;
+        res.data.createdByUser.forEach(element => {
+            if (moment(startTime).isBetween(element.startTime, element.endTime) || moment(endTime).isBetween(element.startTime, element.endTime) || moment(element.startTime).isBetween(startTime, endTime) || moment(element.endTime).isBetween(startTime, endTime) || (moment(startTime).isSame(element.startTime) && moment(endTime).isSame(element.endTime))) {
+                auxVar = false;
+                return;
             }
         });
 
-        res.data.notAcceptedByUserYet.forEach((event) => {
-            if (moment(startTime).isBetween(moment(event.startTime), moment(event.endTime)) || moment(endTime).isBetween(moment(event.startTime), moment(event.endTime)) || moment(event.startTime).isBetween(moment(startTime), moment(endTime)) || moment(event.endTime).isBetween(moment(startTime), moment(endTime))) {
-                return false;
+        res.data.notAcceptedByUserYet.forEach(element => {
+            if (moment(startTime).isBetween(element.startTime, element.endTime) || moment(endTime).isBetween(element.startTime, element.endTime) || moment(element.startTime).isBetween(startTime, endTime) || moment(element.endTime).isBetween(startTime, endTime) || (moment(startTime).isSame(element.startTime) && moment(endTime).isSame(element.endTime))) {
+                auxVar = false;
+                return;
             }
-        })
+        });
 
-        return true;
+        return auxVar;
+
     }).catch((err) => { console.error(err) });
 }
 
@@ -57,25 +61,36 @@ function handleCreateEvent({ name, description, startDate, endDate, location, em
         return;
     }
 
-    // if (!isThisTimeFree(startDateForInput, endDateForInput)) {
-    //     alert('Já existe um evento nesse horário');
-    //     return;
-    // }
 
-    api.post('/event', {
-        user_id: JSON.parse(localStorage.user).user_id,
-        name,
-        startTime: startDateForInput,
-        endTime: endDateForInput,
-        description,
-        location,
-        userEmails: emailArray
-    }).then((res) => {
+    isThisTimeFree(startDateForInput, endDateForInput).then((res) => {
         console.log(res);
-        window.location.reload();
+        if (!res) {
+            alert('Já existe um evento nesse horário');
+            return
+        }
+
+        else {
+            api.post('/event', {
+                user_id: JSON.parse(localStorage.user).user_id,
+                name,
+                startTime: startDateForInput,
+                endTime: endDateForInput,
+                description,
+                location,
+                userEmails: emailArray
+            }).then((res) => {
+                console.error(res);
+                window.location.reload();
+            }).catch((err) => {
+                console.error(err);
+            })
+        }
+
     }).catch((err) => {
-        console.log(err);
+        console.error(err);
     })
+
+
 };
 
 function CreateEventPopUp({ display }) {

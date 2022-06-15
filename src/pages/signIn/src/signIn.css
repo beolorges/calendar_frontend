@@ -3,7 +3,7 @@
     height: 100%;
     display: grid;
     place-items: center;
-    background-color: var(--secondaryColor);
+    background-color: white;
 
 }
 
@@ -32,7 +32,7 @@
     padding: 8px 3%;
     border-radius: 5px;
     border: 1px solid var(--primaryTextColor);
-    background-color: rgb(255, 255, 255, 0.4);
+    background-color: white;
 }
 
 .signInButtonGroup {
@@ -45,8 +45,8 @@
 .signInButtonGroup button {
     padding: 5px;
     border-radius: 8px;
-    border: 1px solid var(--primaryTextColor);
-    background-color: var(--primaryTextColor);
+    border: 1px solid var(--detailsColor);
+    background-color: var(--detailsColor);
     color: white;
     width: 20%;
     max-width: 150px;

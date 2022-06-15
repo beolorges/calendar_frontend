@@ -85,7 +85,6 @@ function SignIn() {
                     </div>
                 </div>
                 <div className="signInButtonGroup">
-                    {/* <button>Limpar</button> */}
                     <button onClick={
                         () => {
                             !name.length > 0

@@ -24,7 +24,7 @@ function SignIn() {
     return (
         <div className="signInBase">
             <div className="signInContent">
-                <h1> Entre já! </h1>
+                <h1> Faça seu login! </h1>
                 <div className="signInInputGroup">
                     <input className="signInIndividualInputs" type="email" placeholder="Insira seu email" onChange={(e) => { setEmail(e.target.value) }} />
                     <input className="signInIndividualInputs" type="password" placeholder="Insira sua senha" onChange={(e) => { setPassword(e.target.value) }} />
