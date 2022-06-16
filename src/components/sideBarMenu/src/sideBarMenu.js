@@ -4,7 +4,6 @@ import "./sideBarMenu.css"
 import { PlusCircle } from "react-bootstrap-icons";
 import EventPopUp from "./../../../components/createEventPopUp/createEventPopUp";
 import api from '../../../services/api';
-import moment from "moment";
 
 const user = JSON.parse(localStorage.getItem('user'));
 
