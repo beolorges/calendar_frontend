@@ -4,6 +4,7 @@ import "./sideBarMenu.css"
 import { PlusCircle } from "react-bootstrap-icons";
 import EventPopUp from "./../../../components/createEventPopUp/createEventPopUp";
 import api from '../../../services/api';
+import moment from "moment";
 
 const user = JSON.parse(localStorage.getItem('user'));
 
@@ -24,7 +25,7 @@ function SideBarMenu() {
     return (
         <div className="sideBarMenu">
             <div>
-                <h1>Olá, {user.name}!</h1>
+                <h1>Olá, {user.name.split(' ', 1)}!</h1>
                 <div className="textSideBarMenu">
                     <p>Você tem {qtdEvents} eventos.</p>
 
@@ -32,7 +33,7 @@ function SideBarMenu() {
             </div>
             <div className="elementsSideBarMenu">
                 <button className="createEvent" onClick={() => { handleModalSelection() }}> <PlusCircle /> Criar evento </button>
-                <EventPopUp display={modal} />
+                <EventPopUp display={modal} type={'create'} />
                 <Calendar locale="pt-br" />
             </div>
 

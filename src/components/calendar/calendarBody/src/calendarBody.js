@@ -9,11 +9,14 @@ import CreateEventPopUp from "../../../createEventPopUp/createEventPopUp";
 const days = ["dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sab."];
 const user = JSON.parse(localStorage.getItem('user'));
 
+
 function CalendarBody({ inputDay }) {
     const [eventCreatedByUser, setEventCreatedByUser] = useState([]);
     const [acceptedByUser, setAcceptedByUser] = useState([]);
     const [notAcceptedByUser, setNotAcceptedByUser] = useState([]);
     const [modal, setModal] = useState('none');
+
+
 
     function handleModalSelection() {
         modal === 'none' ? setModal('inline') : setModal('none');
@@ -25,7 +28,8 @@ function CalendarBody({ inputDay }) {
             setAcceptedByUser(response.data.acceptedByUser);
             setNotAcceptedByUser(response.data.notAcceptedByUserYet);
         }).catch((err) => { console.error(err) });
-    }, [])
+    }, []);
+
 
     return (
         <>
@@ -123,9 +127,10 @@ function CalendarBody({ inputDay }) {
                     )}
                 </div>
             </div >
-            <CreateEventPopUp display={modal} />
+            <CreateEventPopUp display={modal} type={'create'} />
         </>
     )
+
 }
 
 export default CalendarBody;

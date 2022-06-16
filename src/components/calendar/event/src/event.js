@@ -5,10 +5,6 @@ import moment from "moment";
 
 function Event({ name, startTime, endTime, eventId, numberOfDays, eventType, inputDay }) {
 
-    if (name === 'Teste Dias') {
-        console.log({ startTime, endTime })
-    }
-
     const startHour = moment(startTime).format('HH');
     const startMinute = moment(startTime).format('mm');;
     const endHour = moment(endTime).format('HH');

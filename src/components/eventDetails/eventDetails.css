@@ -42,12 +42,18 @@
 
 .eventDetailsButton {
     width: 100%;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
 }
 
 .eventDetailsBody button {
     height: 50%;
-    width: 60%;
+    width: 80%;
+}
 
+.eventDetailsBody button:first-of-type {
+    background-color: white;
+    color: var(--primaryTextColor);
+    border: 1px solid var(--primaryTextColor);
 }
